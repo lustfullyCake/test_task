@@ -1,0 +1,28 @@
+version: '3.1'
+services:
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_DB: test
+      POSTGRES_PASSWORD: test
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 4G
+    volumes:
+      - ../2. Init Database:/docker-entrypoint-initdb.d
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  app:
+    image: tiangolo/uvicorn-gunicorn-fastapi:python3.9
+    ports:
+      - "8000:8000"
+    build: .
+    depends_on:
+      - db
