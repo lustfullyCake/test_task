@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from sqlalchemy import UUID, Column, String
 
-from .database import Base
+from database import Base
 
 
 class Secret(Base):

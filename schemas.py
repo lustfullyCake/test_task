@@ -4,8 +4,8 @@ from hashlib import md5
 from pydantic import BaseModel, Field
 from uuid import uuid4
 
-from .encrypt import encrypt
-from .settings import get_settings
+from encrypt import encrypt
+from settings import get_settings
 
 
 class SecretRecord(BaseModel):

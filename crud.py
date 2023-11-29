@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from .models import Secret
+from models import Secret
 
 if TYPE_CHECKING:
     from schemas import SecretRecord

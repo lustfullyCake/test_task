@@ -3,14 +3,14 @@ from starlette.responses import JSONResponse
 from sqlalchemy.orm import Session
 from uuid import UUID
 
-from .crud import add_secret, find_secret, delete_secret
-from .database import engine, get_session
-from .encrypt import compare_phrase, decrypt
-from .schemas import SecretRecord
-from .responses import GenerateSecretResponse, GetSecretResponse, MessageResponse
-from .requests import GenerateSecretRequest, GetSecretRequest
-from .models import Base
-from .settings import get_settings
+from crud import add_secret, find_secret, delete_secret
+from database import engine, get_session
+from encrypt import compare_phrase, decrypt
+from schemas import SecretRecord
+from responses import GenerateSecretResponse, GetSecretResponse, MessageResponse
+from requests import GenerateSecretRequest, GetSecretRequest
+from models import Base
+from settings import get_settings
 
 
 app = FastAPI()

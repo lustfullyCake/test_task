@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from fastapi.testclient import TestClient
 
-from ..encrypt import encrypt, decrypt
-from ..main import app
+from encrypt import encrypt, decrypt
+from main import app
 
 client = TestClient(app)
 
